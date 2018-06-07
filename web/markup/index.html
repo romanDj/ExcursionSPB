@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Экскурсия Санкт-Петербург</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body>	
+		<div class="container">
+
+			<div class="bgImg ten">
+			    <h1 class="p-4 m-0 text-light">Экскурсии по Санкт-Петербургу</h1>
+			</div>
+			<nav class="navbar ten navbar-expand-lg navbar-light bg-light mb-3">
+			  <a class="navbar-brand" href="#"></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="{% url 'index' %}">Список экскурсий</a>
+			      </li>
+			      
+			    
+			    
+			        <li class="nav-item">
+			        <a class="nav-link" href="{% url 'auth' %}">Авторизация</a>
+			      </li>
+			     
+ 				
+			       
+			      <li class="nav-item">
+			        <a class="nav-link text-danger border-left" href="{% url 'logoutBtn' %}">Выйти</a>
+			      </li>
+			      
+			    </ul>
+			  </div>
+			</nav>
+
+		<div class="card ten  rounded-0 border-0 mb-4">
+			
+					
+					<div class="card-body excursion-block">
+
+		    			<h3 class="text-left pl-4 mb-3">
+		    		 	Петропавловская крепость
+		    			</h3>
+		    			<img src="img/Panorama_Kazansky.jpg" class="float-right">
+		    			<p class="description">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+		    			<p class="count-place">Количество мест - 12 чел</p>
+		    			<p class="date">June, 20 , 2018</p>
+		    			<a href="#" class="btn btn-primary float-right">Записаться</a>
+
+	    			</div>
+					<hr>
+	    			
+					<div class="card-body excursion-block">
+
+		    			<h3 class="text-left pl-4 mb-3">
+		    		 	Петропавловская крепость
+		    			</h3>
+		    			<img src="img/Panorama_Kazansky.jpg" class="float-right">
+		    			<p class="description">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+		    			<p class="count-place">Количество мест - 12 чел</p>
+		    			<p class="date">June, 20 , 2018</p>
+		    			<a href="#" class="btn btn-secondary float-right">Запись невозможна т.к. нет свободных мест</a>
+	    			</div>
+					<hr>
+	    			
+						<div class="card-body excursion-block">
+
+		    			<h3 class="text-left pl-4 mb-3">
+		    		 	Петропавловская крепость
+		    			</h3>
+		    			<img src="img/Panorama_Kazansky.jpg" class="float-right">
+		    			<p class="description">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
+		    			<p class="count-place">Количество мест - 12 чел</p>
+		    			<p class="date">June, 20 , 2018</p>
+		    			<a href="#" class="btn btn-secondary float-right">Запись невозможна т.к. нет свободных мест</a>
+	    			</div>
+			
+		</div>
+	</div>
+</body>
+</html>
+
