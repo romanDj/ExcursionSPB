@@ -68,4 +68,12 @@ class Excursion extends \yii\db\ActiveRecord
         return $exc;
 
     }
+
+    public static function  getUserExc(){
+        return  Excursion::find()
+            ->joinWith('records')
+            ->where(['records.id_user' => Yii::$app->user->identity->id ])
+            ->all();
+    }
+
 }

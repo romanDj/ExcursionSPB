@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use app\models\EntryForm;
 use app\models\Excursion;
+use app\models\Records;
+use app\models\User;
 use Yii;
 use yii\data\Pagination;
 use yii\filters\AccessControl;
@@ -62,13 +64,24 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
+    public function actionIndex($filter = 'all')
     {
         $query = Excursion::find();
 
+        if($filter == 'active'){
+            $query = Excursion::find()->where("date > curdate()");
+        }elseif ($filter == 'no_place'){
+            $query = Excursion::find()
+                ->joinWith('records')
+                ->groupBy('excursion.id')
+                ->having('COUNT(records.id) = excursion.place ');
+        }elseif ($filter == 'passed'){
+            $query = Excursion::find()->where("date < curdate()");
+        }
+
         $count = $query->count();
 
-        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 1 ]);
+        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 3 ]);
 
         $excursions = $query->offset($pagination->offset)
             ->limit($pagination->limit)
@@ -151,6 +164,30 @@ class SiteController extends Controller
         }else{
             return  $this->render('entry', ['model' => $model]);
         }
+
+    }
+
+    public function actionRecordExc($id){
+        $num = Records::find()->where(['id_excursion'=>$id])->andWhere( ['id_user' => Yii::$app->user->identity->id])->one();
+
+        if(count($num) != 0){
+
+            Yii::$app->session->addFlash('info', 'Вы уже записаны на эту экскурсию.');
+
+        }else{
+
+            Records::createRecord($id);
+            Yii::$app->session->addFlash('info', 'Вы успешно записались на экскурсию #'. $id);
+
+        }
+
+        return $this->redirect(['site/personal']);
+    }
+
+    public function actionPersonal(){
+
+        $us = User::findOne(['id' => Yii::$app->user->identity->id]);
+        return $this->render('personal', ['myexcursion' => $us]);
 
     }
 }

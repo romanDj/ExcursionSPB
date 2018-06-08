@@ -28,6 +28,8 @@ PublicAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+
+
 <div class="container">
 
     <div class="bgImg ten">
@@ -50,6 +52,9 @@ PublicAsset::register($this);
                         <a class="nav-link" href="<?= Url::toRoute(['auth/login']) ?>">Авторизация</a>
                     </li>
                 <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::toRoute(['personal']) ?>">Личный кабинет</a>
+                    </li>
                     <?= Html::beginForm(['/auth/logout'],'post')
                     . Html::submitButton(
                             'Выйти, '.Yii::$app->user->identity->name,

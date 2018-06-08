@@ -63,4 +63,11 @@ class Records extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'id_user']);
     }
+
+    public static function createRecord( $exc){
+        $rec =  new Records();
+        $rec->id_excursion = $exc;
+        $rec->id_user = Yii::$app->user->identity->id;
+        $rec->save();
+    }
 }

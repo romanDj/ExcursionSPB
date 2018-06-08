@@ -3,48 +3,21 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 use yii\widgets\LinkPager;
+use yii\helpers\Url;
 
 $this->title = 'Список экскурсий';
 ?>
-<div class="card-body excursion-block">
 
-    <h3 class="text-left pl-4 mb-3">
-        Петропавловская крепость
-    </h3>
-    <img src="img/Panorama_Kazansky.jpg" class="float-right">
-    <p class="description">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
-    <p class="count-place">Количество мест - 12 чел</p>
-    <p class="date">June, 20 , 2018</p>
-    <a href="#" class="btn btn-primary float-right">Записаться</a>
-
+<div class=" p-3  ">
+    Фильтр:
+    <a class="btn btn-link p-0 pl-1 pr-1 ml-2" href="<?= Url::toRoute(['/']) ?>">Все</a>
+    <a class="btn btn-link p-0 pl-1 pr-1 ml-2" href="<?= Url::toRoute(['/', 'filter'=>'active']) ?>">Активно</a>
+    <a class="btn btn-link p-0 pl-1 pr-1 ml-2" href="<?= Url::toRoute(['/', 'filter'=>'passed']) ?>">Прошла</a>
+    <a class="btn btn-link p-0 pl-1 pr-1 ml-2" href="<?= Url::toRoute(['/', 'filter'=>'no_place']) ?>">Нет мест</a>
 </div>
-<hr>
-
-<div class="card-body excursion-block">
-
-    <h3 class="text-left pl-4 mb-3">
-        Петропавловская крепость
-    </h3>
-    <img src="img/Panorama_Kazansky.jpg" class="float-right">
-    <p class="description">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
-    <p class="count-place">Количество мест - 12 чел</p>
-    <p class="date">June, 20 , 2018</p>
-    <a href="#" class="btn btn-secondary float-right">Запись невозможна т.к. нет свободных мест</a>
-</div>
-<hr>
-
-<div class="card-body excursion-block">
-
-    <h3 class="text-left pl-4 mb-3">
-        Петропавловская крепость
-    </h3>
-    <img src="img/Panorama_Kazansky.jpg" class="float-right">
-    <p class="description">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</p>
-    <p class="count-place">Количество мест - 12 чел</p>
-    <p class="date">June, 20 , 2018</p>
-    <a href="#" class="btn btn-secondary float-right">Запись невозможна т.к. нет свободных мест</a>
-</div>
+<hr class="m-0">
 
 
 <?php foreach ($excursions as $excursion): ?>
@@ -52,11 +25,24 @@ $this->title = 'Список экскурсий';
         <h3 class="text-left pl-4 mb-3">
             <?= $excursion->name ?>
         </h3>
-        <?= Html::img("/uploads/".$excursion->img,['height' => 100,'class' => 'float-right']) ?>
+        <?= Html::img("/uploads/".$excursion->img,['width' => 300,'class' => 'float-right']) ?>
         <p class="description"><?= $excursion->description ?></p>
-        <p class="count-place">Количество мест - <?= $excursion->place ?> чел</p>
+        <?php if($excursion->place - count($excursion->records) > 0): ?>
+            <p class="count-place">Количество свободных мест - <?= $excursion->place - count($excursion->records) ?> чел</p>
+
+            <?php if(!Yii::$app->user->isGuest): ?>
+                <?php if($excursion->date > date('Y-m-d')): ?>
+                     <a class="btn btn-primary float-right" href="<?= Url::toRoute(['site/record-exc', 'id' => $excursion->id]) ?>">Запись</a>
+                <?php else: ?>
+                    <button class="btn btn-secondary float-right">Экскурсия уже прошла</button>
+                <?php endif; ?>
+            <? endif; ?>
+
+        <?php else: ?>
+            <p class="count-place">Нет свободных мест</p>
+        <?php endif; ?>
         <p class="date"><?= Yii::$app->formatter ->asDate($excursion->date,'long') ?></p>
-        <a class="btn btn-primary float-right" href="http://www.yiiframework.com/doc/">Запись</a>
+
     </div>
     <hr>
 <?php endforeach;  ?>

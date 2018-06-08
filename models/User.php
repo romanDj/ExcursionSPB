@@ -60,6 +60,11 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         return $this->hasMany(Records::className(), ['id_user' => 'id']);
     }
 
+    public function getExcursion()
+    {
+        return $this->hasMany(Excursion::className(), ['id' => 'id_excursion'])
+            ->viaTable('records', ['id_user' => 'id']);
+    }
 
     public static function findIdentity($id)
     {
