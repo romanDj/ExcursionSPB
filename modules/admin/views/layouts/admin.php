@@ -30,7 +30,7 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => 'Админ панель',
-        'brandUrl' => Yii::$app->homeUrl,
+        'brandUrl' => ['/admin/'],
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
@@ -38,7 +38,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/admin/']],
+            ['label' => 'Перейти на сайт', 'url' => Yii::$app->homeUrl],
             ['label' => 'Пользователи', 'url' => ['/admin/user/']],
             ['label' => 'Экскурсии', 'url' => ['/admin/excursion/']],
             ['label' => 'Записи', 'url' => ['/admin/records/']],

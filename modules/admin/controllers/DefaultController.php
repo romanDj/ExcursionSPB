@@ -2,7 +2,10 @@
 
 namespace app\modules\admin\controllers;
 
+
+use app\models\User;
 use yii\web\Controller;
+
 
 /**
  * Default controller for the `admin` module
@@ -15,6 +18,7 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $users = User::find();
+        return $this->render('index',['user'=>$users]);
     }
 }
